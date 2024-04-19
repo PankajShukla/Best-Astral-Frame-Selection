@@ -2,4 +2,8 @@
 maxUploadSize = 999
 
 [theme]
-backgroundColor = "black"
+primaryColor="#F63366"
+backgroundColor="#000000"
+secondaryBackgroundColor="#262730"
+textColor="#FFFFFF"
+font="Verdana"
