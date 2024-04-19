@@ -1,5 +1,0 @@
-[server]
-maxUploadSize = 999
-
-[theme]
-backgroundColor = "black"
