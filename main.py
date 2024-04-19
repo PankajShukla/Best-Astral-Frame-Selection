@@ -49,13 +49,18 @@ st.markdown(f'<p style="color:#d6d7d9;font-size:20px;border-radius:2%;"> This ap
 
 def set_up_emailid():
     try:
+
         c1, c2 = st.columns(2)
         with c1:
             dt = st.date_input("Pick video Capture date", datetime.date.today() - datetime.timedelta(0))
 
         with c2:
-            id = st.text_input(label='Enter a valid email address', value = "" )
-            id = id.replace(".", "|")
+
+            while 1:
+                id = st.text_input(label='Enter a valid email address', value = "" )
+                id = id.replace(".", "|")
+                if id != "":
+                    break
 
         return id, dt
     except:
