@@ -52,12 +52,12 @@ def set_up_emailid():
 
         c1, c2 = st.columns(2)
         with c1:
-            dt = st.date_input("Pick video Capture date", datetime.date.today() - datetime.timedelta(0))
+            dt = st.date_input("Select the date on which video was captured", datetime.date.today() - datetime.timedelta(0))
 
         with c2:
 
             while 1:
-                id = st.text_input(label='Enter a valid email address', value = "" )
+                id = st.text_input(label='Enter a valid email address (This will be used to create a dedicated folder for you.)', value = "" )
                 id = id.replace(".", "|")
                 if id != "":
                     break
