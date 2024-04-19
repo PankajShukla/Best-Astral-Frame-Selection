@@ -237,7 +237,7 @@ def text_to_ranges(_text):
         if _ranges != "":
             val = _ranges.split('-')
             int_list.append(val)
-    st.write(int_list)
+    # st.write(int_list)
     return int_list
 
 
