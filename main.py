@@ -36,7 +36,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.markdown(f'<p style="color:#9bdaf1;font-size:50px;border-radius:2%;"> Best Capture 🪐🔭</p>', unsafe_allow_html=True)
+st.markdown(f'<p style="color:#9bdaf1;font-size:50px;border-radius:2%;"> Best Astral Frame 🪐🔭</p>', unsafe_allow_html=True)
 
 st.markdown(f'<p style="color:#d6d7d9;font-size:20px;border-radius:2%;"> This application helps to choose the best frames of the sky objects from a video captured over a camera</p>', unsafe_allow_html=True)
 
