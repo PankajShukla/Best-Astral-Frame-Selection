@@ -2,6 +2,6 @@ moviepy
 mediapy
 ffmpeg-python
 streamlit_image_select
-opencv-python
+opencv-python-headless
 pillow
 streamlit
