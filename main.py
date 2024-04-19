@@ -268,7 +268,6 @@ except:
 # -------------------------------------------------
 
 
-st.markdown(f'<p style="color:#ffc375;font-size:20px;border-radius:2%;"> A. View the Video </p>', unsafe_allow_html=True)
 
 
 try:
@@ -282,13 +281,24 @@ try:
         vcol1, vcol2, vcol3 = st.columns(3)
 
         with vcol1:
+            st.markdown(f'<p style="color:#ffc375;font-size:20px;border-radius:2%;"> A. View the Video </p>',
+                        unsafe_allow_html=True)
             st.video(video_bytes)
+
         with vcol2:
-            st.video(video_bytes)
-            # st.empty()
+
+            st.markdown(
+                f'<p style="color:#ffc375;font-size:20px;border-radius:2%;"> B. Choose the best video clips </p>',
+                unsafe_allow_html=True)
+            try:
+                video_trimming_text_input = st.text_input(
+                    'Enter video ranges to trim in this format : 1-2 ; 4-5 ; 4-11;')
+            except:
+                pass
+
         with vcol3:
-            st.video(video_bytes)
-            # st.empty()
+            # st.video(video_bytes)
+            st.empty()
 except:
     pass
 
@@ -298,12 +308,6 @@ except:
 # UI - Section 2 :
 # -------------------------------------------------
 
-st.markdown(f'<p style="color:#ffc375;font-size:20px;border-radius:2%;"> B. Choose the best video clips </p>', unsafe_allow_html=True)
-
-try:
-    video_trimming_text_input = st.text_input('Enter video ranges to trim in this format : 1-2 ; 4-5 ; 4-11;')
-except:
-    pass
 
 
 st.markdown(f'<p style="color:#ffc375;font-size:20px;border-radius:2%;"> C. Split the best video clip into Frames </p>', unsafe_allow_html=True)
