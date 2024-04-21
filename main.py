@@ -287,6 +287,11 @@ try:
 
         with vcol2:
 
+            # -------------------------------------------------
+            # UI - Section 2 :
+            # -------------------------------------------------
+
+
             st.markdown(
                 f'<p style="color:#ffc375;font-size:20px;border-radius:2%;"> B. Choose the best video clips </p>',
                 unsafe_allow_html=True)
@@ -296,35 +301,30 @@ try:
             except:
                 pass
 
+            st.markdown(
+                f'<p style="color:#ffc375;font-size:20px;border-radius:2%;"> C. Split the best video clip into Frames </p>',
+                unsafe_allow_html=True)
+
+            try:
+                with st.form("TrimVideo"):
+                    trimmed = st.form_submit_button("Trim now")
+                    if trimmed:
+                        ranges_list = text_to_ranges(video_trimming_text_input)
+                        for r in ranges_list:
+                            try:
+                                trimVideo(filename, int(r[0]), int(r[1]))
+                            except:
+                                pass
+                        st.write('Video Trimming complete!')
+            except:
+                pass
+
         with vcol3:
             # st.video(video_bytes)
             st.empty()
 except:
     pass
 
-
-
-# -------------------------------------------------
-# UI - Section 2 :
-# -------------------------------------------------
-
-
-
-st.markdown(f'<p style="color:#ffc375;font-size:20px;border-radius:2%;"> C. Split the best video clip into Frames </p>', unsafe_allow_html=True)
-
-try:
-    with st.form("TrimVideo"):
-        trimmed = st.form_submit_button("Trim now")
-        if trimmed:
-            ranges_list = text_to_ranges(video_trimming_text_input)
-            for r in ranges_list:
-                try:
-                    trimVideo(filename, int(r[0]), int(r[1]))
-                except:
-                    pass
-            st.write('Video Trimming complete!')
-except:
-    pass
 
 # -------------------------------------------------
 # UI - Section 3 :
